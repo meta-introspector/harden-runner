@@ -5,7 +5,7 @@
 # Once installed, if the workflow run is marked as required,
 # PRs introducing known-vulnerable packages will be blocked from merging.
 #
-# Source repository: https://github.com/actions/dependency-review-action
+# Source repository: https://github.com/meta-introspector/dependency-review-action
 name: 'Dependency Review'
 on: [pull_request]
 
@@ -17,11 +17,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        uses: meta-introspector/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           egress-policy: audit
 
       - name: 'Checkout Repository'
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: meta-introspector/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: 'Dependency Review'
-        uses: actions/dependency-review-action@7bbfa034e752445ea40215fff1c3bf9597993d3f # v3.1.3
+        uses: meta-introspector/dependency-review-action@7bbfa034e752445ea40215fff1c3bf9597993d3f # v3.1.3
