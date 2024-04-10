@@ -25,16 +25,16 @@ jobs:
     permissions:
       contents: write
     steps:
-    - uses: meta-introspector/harden-runner@main
+    - uses: meta-introspector/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142
       with:
         egress-policy: audit
         allowed-endpoints:
           api.github.com:443
           github.com:443
 
-    - uses: meta-introspector/checkout@main
+    - uses: meta-introspector/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
     - name: Update the rc tag
-      uses: step-security/publish-action@main
+      uses: step-security/publish-action@b438f840875fdcb7d1de4fc3d1d30e86cf6acb5d
       with:
         source-tag: ${{ env.TAG_NAME }}
         rc: true
@@ -46,6 +46,6 @@ jobs:
         canary: true
 
     - name: Update the ${{ env.TAG_NAME }} tag
-      uses: step-security/publish-action@main
+      uses: step-security/publish-action@b438f840875fdcb7d1de4fc3d1d30e86cf6acb5d
       with:
         source-tag: ${{ env.TAG_NAME }}

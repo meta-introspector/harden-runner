@@ -11,7 +11,7 @@ jobs:
       pull-requests: read
     steps:
       - name: Harden Runner
-        uses: meta-introspector/harden-runner@main # v2.7.0
+        uses: meta-introspector/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           disable-sudo: true
           egress-policy: block
@@ -20,4 +20,4 @@ jobs:
             int.api.stepsecurity.io:443
 
       - name: Code Review
-        uses: step-security/ai-codewise@main
+        uses: step-security/ai-codewise@int

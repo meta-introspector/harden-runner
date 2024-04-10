@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: meta-introspector/harden-runner@main # v2.7.0
+        uses: meta-introspector/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           disable-sudo: true
           egress-policy: audit
@@ -32,14 +32,14 @@ jobs:
             uploader.codecov.io:443
 
       - name: Checkout
-        uses: meta-introspector/checkout@main # v4.1.1
+        uses: meta-introspector/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: Install Dependencies
         run: npm ci
       - name: Run coverage
         run: npm test -- --coverage
-      - uses: meta-introspector/codecov-action@main # v3.1.4
+      - uses: meta-introspector/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3.1.4
       - name: Publish Test Results
-        uses: step-security/publish-unit-test-result-action@main
+        uses: step-security/publish-unit-test-result-action@v1
         if: always()
         with:
           files: |
