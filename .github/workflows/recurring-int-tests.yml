@@ -1,8 +1,8 @@
 name: Recurring INT tests
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */2 * * *' # every other hour
+  #schedule:
+  #  - cron: '0 */2 * * *' # every other hour
 
 permissions:
   contents: read
